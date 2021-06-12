@@ -17,6 +17,7 @@ const Weatherday = (props) => {
         return {
           min: df.temp.min,
           max: df.temp.max,
+          time: df.dt
         };
       })
     );
@@ -24,10 +25,11 @@ const Weatherday = (props) => {
 
   return (
     <div>
+        <div>{props.coords.city}, {props.coords.state}</div>
       {!!weatherInfo &&
         weatherInfo.map((i, index) => (
           <div key={index}>
-            <Weather min={i.min} max={i.max}></Weather>
+            <Weather time={i.time} min={i.min} max={i.max}></Weather>
           </div>
         ))}
     </div>

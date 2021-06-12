@@ -34,11 +34,12 @@ function Form() {
             </button>
           </form>
         }
-        {coords && (
+        {coords && !coords.error_code && (
           <div>
             <Weatherday coords={coords} zip={inputvalue}></Weatherday>
           </div>
         )}
+        {coords && coords.error_code && <div>invalid zip code</div>}
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import moment from 'moment';
 
 
 
@@ -17,7 +18,7 @@ const Weather = (props) => {
             {/* <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`}></img> */}
             <div>High {props.max}</div>
             <div>Low {props.min}</div>
-
+            <div>{moment.unix(props.time).format("MM/DD")}</div>
         </div>
 
 
